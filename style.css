@@ -1,0 +1,487 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-color: rgb(20, 20, 197);
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.2rem;
+  color: rgb(102, 95, 95);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(8, 8, 8);
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+a:hover, .active {
+  color: rgb(20, 20, 197);
+}
+
+button {
+  color: white;
+  border-radius: 4px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding: 20px 40px 0 40px;
+  height: auto;
+  min-height: 100vh;
+  background-image: url("images/car.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 60%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left, .middle, .right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.left {
+  cursor: pointer;
+}
+
+#register {
+  background-color: rgb(20, 20, 197);
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.3);
+  padding: 15px 30px;
+}
+
+#register:hover {
+  box-shadow: 0 6px 4px rgb(111, 111, 224);
+}
+
+/***************** HOME SECTION ****************/
+#home {
+  margin-top: 80px;
+  padding: 20px 20px 0 20px;
+  width: 40vw;
+}
+#home div {
+  margin-bottom: 50px;
+}
+#home span {
+  color: rgb(20, 20, 197);
+}
+#home p {
+  color: rgb(102, 95, 95);
+}
+#home .btns {
+  display: flex;
+  gap: 20px;
+}
+#home button#book-ride {
+  border: 2px solid rgb(20, 20, 197);
+  background-color: rgb(20, 20, 197);
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+}
+#home button#book-ride:hover {
+  box-shadow: 0 6px 4px rgb(111, 111, 224);
+}
+#home button#learn-more {
+  background-color: rgb(8, 8, 8);
+  padding: 20px 40px;
+  border: 2px solid rgb(8, 8, 8);
+}
+#home button#learn-more:hover {
+  background-color: white;
+  color: rgb(8, 8, 8);
+}
+
+/***************** PAGE1 SECTION ****************/
+#page1 {
+  background-color: #f5f5f5;
+  margin: 0 60px;
+  padding: 60px 20px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+#page1 form {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 20px;
+}
+#page1 form .input {
+  width: 32%;
+}
+#page1 form .input i {
+  color: rgb(102, 95, 95);
+}
+#page1 form .input span {
+  color: red;
+}
+#page1 form .input input, #page1 form .input select, #page1 form .input button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+}
+#page1 form .input button {
+  background-color: rgb(20, 20, 197);
+  border-radius: 0;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.5);
+}
+#page1 form .input button:hover {
+  box-shadow: 0 6px 4px rgb(111, 111, 224);
+}
+
+/***************** PAGE2 SECTION ****************/
+#page2 {
+  padding: 120px 20px 0 20px;
+  text-align: center;
+}
+#page2 .items {
+  display: flex;
+  gap: 50px;
+  padding: 120px 100px;
+}
+#page2 img {
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+
+/***************** PAGE3 SECTION ****************/
+#page3 {
+  padding: 80px 60px;
+  text-align: center;
+}
+#page3 p {
+  margin: 20px auto 0;
+  width: 40vw;
+}
+#page3 div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+#page3 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#page3 li {
+  background-color: #eee;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease-in-out;
+}
+#page3 img {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+#page3 li:hover, #page3 .selected {
+  background-color: rgb(20, 20, 197);
+  color: white;
+}
+#page3 .table {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#page3 table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#page3 td, #page3 th {
+  border: 1px solid #ddd;
+  padding: 10px 30px;
+}
+#page3 th {
+  background-color: rgb(20, 20, 197);
+  color: white;
+}
+#page3 button {
+  width: 100%;
+  padding: 15px;
+  background-color: rgb(20, 20, 197);
+  border-radius: 0;
+}
+#page3 button:hover {
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+/***************** PAGE4 SECTION ****************/
+#page4 {
+  text-align: center;
+  padding: 60px;
+  background-color: #222;
+  color: white;
+  margin-top: 150px;
+}
+#page4 h1 {
+  padding: 20px;
+}
+#page4 span {
+  color: rgb(20, 20, 197);
+}
+
+#page5 img#car {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+#page5 div.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 100px;
+  gap: 100px;
+}
+#page5 p {
+  margin: 30px 0;
+}
+#page5 button {
+  padding: 20px;
+  background-color: rgb(20, 20, 197);
+}
+#page5 button:hover {
+  box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.4);
+}
+#page5 article {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 20px;
+  gap: 20px;
+}
+#page5 article img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+#page5 article p {
+  margin: 0;
+  margin-top: 10px;
+}
+
+/***************** TESTIMONIALS SECTION ****************/
+#testimonials {
+  text-align: center;
+  background-color: #fcf6f6;
+  padding: 80px;
+}
+#testimonials h2 {
+  padding: 10px;
+}
+#testimonials p#desc {
+  margin: 20px auto;
+  width: 70vw;
+}
+#testimonials .cards {
+  margin: 0 80px;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+#testimonials .card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+#testimonials .card div.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+#testimonials .card div.details div.left {
+  display: flex;
+}
+#testimonials .card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+#testimonials .card i {
+  font-size: 2rem;
+  color: red;
+}
+
+/***************** FAQ SECTION ****************/
+#faq {
+  padding: 100px 0;
+  background-color: #fafafa;
+  background-image: url("images/car.jpg");
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: -30% 70%;
+}
+#faq .top {
+  text-align: center;
+}
+#faq h5, #faq h2 {
+  padding: 10px;
+}
+#faq p.text {
+  width: 65vw;
+  margin: 0 auto;
+}
+#faq .faqs {
+  padding: 60px 0;
+  margin: 0 auto;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+#faq .question {
+  background-color: #FFF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+#faq .question h6 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+#faq .question p {
+  padding: 30px;
+}
+#faq .question .detail {
+  display: none;
+}
+#faq .question .open {
+  background-color: rgb(20, 20, 197);
+  color: #FFF;
+  box-shadow: 0px 2px 4px rgb(20, 20, 197);
+}
+
+/***************** LAST SECTION ****************/
+#last {
+  background-color: #f3eeee;
+}
+#last .left {
+  margin: 0 auto;
+  width: 60vw;
+  padding: 80px 40px;
+  display: block;
+}
+#last .left h2 {
+  padding-bottom: 40px;
+}
+#last .left .btns {
+  display: flex;
+  gap: 50px;
+}
+
+/***************** footer SECTION ****************/
+#footer {
+  padding: 100px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.3fr;
+  grid-template-rows: 1fr;
+  gap: 40px;
+}
+#footer h5 {
+  padding: 12px 0;
+}
+#footer p {
+  padding-bottom: 20px;
+}
+#footer span {
+  font-size: 1.1rem;
+  display: block;
+  padding: 8px 0;
+}
+#footer i {
+  padding-right: 8px;
+}
+#footer li {
+  padding: 7px 0;
+}
+#footer .address:hover {
+  color: rgb(20, 20, 197);
+  cursor: pointer;
+}
+#footer input, #footer button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+}
+#footer input {
+  border-radius: 4px;
+  background-color: #ccc;
+  border: none;
+  margin-top: 15px;
+}
+#footer input::placeholder {
+  font-size: 1.1rem;
+  margin-left: 50%;
+}
+#footer button {
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: rgb(20, 20, 197);
+  box-shadow: 2px 2px 2px rgb(20, 20, 197);
+}
+
+/*# sourceMappingURL=style.css.map */
