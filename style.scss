@@ -28,6 +28,8 @@ h1, h2, h3, h4, h5, h6, p {
 h1 {
   font-size: 4rem;
   font-weight: 900;
+  line-height: 4,5rem;
+  // padding: 20px 0;
 }
 h2 {
   font-size: 3rem;
@@ -40,6 +42,7 @@ h3 {
 h4 {
   font-size: 2rem;
   font-weight: 800;
+  line-height: 2.5rem;
 }
 h5 {
   font-size: 1.5rem;
@@ -76,6 +79,9 @@ button {
 
 body {
   margin: 0;
+  padding: 0;
+  position: relative;
+  // overflow: hidden;
 }
 
 main {
@@ -88,44 +94,75 @@ main {
   background-size: 60%;
 }
 
+#navbar {
+  padding: 20px;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #fff;
+  height: 100vh;
+  width: 80%;
+  transition: transform 0.5s ease-in-out;
+
+  i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  i:hover {
+    color: #ff3906;
+  }
+}
+
+.show {
+  transform: translateX(0%);
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .bar {
+    display: none;
+    font-size: 1.5rem;
+  }
+  .left, .middle, .right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .left {
+    cursor: pointer;
+  }
+  #register {
+    background-color: $primaryColor;
+    box-shadow: 0 4px 2px rgba(0,0,0,0.3);
+    padding: 15px 30px;
+  }
+  #register:hover {
+    box-shadow: 0 6px 4px rgb(111, 111, 224);
+  }
 }
 
-.left, .middle, .right {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-.left {
-  cursor: pointer;
-}
 
-
-#register {
-  background-color: $primaryColor;
-  box-shadow: 0 4px 2px rgba(0,0,0,0.3);
-  padding: 15px 30px;
-}
-#register:hover {
-  box-shadow: 0 6px 4px rgb(111, 111, 224);
-}
-
-/***************** HOME SECTION ****************/
+/***************** SECTION HOME ****************/
 #home {
-  margin-top: 80px;
-  padding: 20px 20px 0 20px;
+  margin-top: 40px;
+  padding: 20px;
   width: 40vw;
-
   div {
     margin-bottom: 50px;
   }
   span {
     color: $primaryColor;
   }
-
   p {
     color: $fourthColor;
   }
@@ -133,8 +170,11 @@ nav {
     display: flex;
     gap: 20px;
   }
+  i {
+    padding: 0 10px;
+  }
   button#book-ride {
-    border: 2px solid $primaryColor;
+    border: 1px solid $primaryColor;
     background-color: $primaryColor;
     box-shadow: 0 4px 2px rgba(0,0,0,0.5);
     padding: 20px 40px;
@@ -145,7 +185,7 @@ nav {
   button#learn-more{
     background-color: $secondaryColor;
     padding: 20px 40px;
-    border: 2px solid $secondaryColor;
+    border: 1px solid $secondaryColor;
   }
   button#learn-more:hover {
     background-color: $thirdColor;
@@ -153,22 +193,25 @@ nav {
   }
 }
 
-/***************** PAGE1 SECTION ****************/
+/***************** SECTION PAGE1 ****************/
 #page1 {
-  background-color: #f5f5f5;
+  background-color: #f1f2f3;
   margin: 0 60px;
-  padding: 60px 20px;
-  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+  padding: 40px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 
   form {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: flex-end;
     gap: 20px;
     .input {
       width: 32%;
-
+      h5 {
+        padding: 10px 0;
+      }
       i {
         color: $fourthColor;
       }
@@ -193,99 +236,113 @@ nav {
   }
 }
 
-/***************** PAGE2 SECTION ****************/
+/***************** SECTION PAGE2 ****************/
 #page2 {
   padding: 120px 20px 0 20px;
   text-align: center;
 
   .items {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 50px;
-    padding: 120px 100px;
+    padding: 60px;
+
+    .item {
+      min-width: 250px;
+      max-width: 400px;
+      flex: 1;
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        margin-bottom: 20px;
+      }
+    }
   }
 
-  img {
-    border-radius: 100%;
-    margin-bottom: 20px;
-  }
 }
 
-/***************** PAGE3 SECTION ****************/
+/***************** SECTION PAGE3 ****************/
 #page3 {
-  padding: 80px 60px;
+  padding: 80px;
   text-align: center;
   
   p {
     margin: 20px auto 0;
     width: 40vw;
   }
-  div {
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
-  }
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      gap: 15px;
+      li {
+        width: 100%;
+        background-color: #eee;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        transition: background-color .3s ease-in-out;
+      }
+      li:hover, .selected {
+        background-color: $primaryColor;
+        color: $thirdColor;
+      }
+    }
+    
+    .right {
+      display: flex;  
+	  justify-content: space-between;
+	  gap: 40px;
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  li {
-    background-color: #eee;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    transition: background-color .3s ease-in-out;
-  }
-
-  img {
-    width: 500px;
-    height: 500px;
-    object-fit: contain;
-  }
-
-  li:hover, .selected {
-    background-color: $primaryColor;
-    color: $thirdColor;
-  }
-
-  .table {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  td, th {
-    border: 1px solid #ddd;
-    padding: 10px 30px;
-  }
-  th{
-    background-color: $primaryColor;
-    color: $thirdColor;
-  }
-  button {
-    width: 100%;
-    padding: 15px;
-    background-color: $primaryColor;
-    border-radius: 0;
-  }
-  button:hover {
-    box-shadow: 0 4px 2px rgba(0,0,0,0.4);
+      img {
+        width: 600px;
+        object-fit: contain;
+      }
+      .table {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+		
+		table {
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		td, th {
+		  border: 1px solid #ddd;
+		  padding: 10px 30px;
+		}
+		th{
+		  background-color: $primaryColor;
+		  color: $thirdColor;
+		}
+      }
+      button {
+        width: 100%;
+        padding: 15px;
+        background-color: $primaryColor;
+        border-radius: 0;
+      }
+      button:hover {
+        box-shadow: 0 4px 2px rgba(0,0,0,0.4);
+      }
+    }
   }
 }
 
-/***************** PAGE4 SECTION ****************/
+/***************** SECTION PAGE4 ****************/
 #page4 {
   text-align: center;
   padding: 60px;
   background-color: #222;
   color: $thirdColor;
-  margin-top: 150px;
+  margin-top: 50px;
 
   h1 {
     padding: 20px;
@@ -295,6 +352,7 @@ nav {
   }
 }
 
+/**************** Section page5 *****************/
 #page5 {
   img#car {
     width: 100%;
@@ -302,42 +360,41 @@ nav {
     object-fit: cover;
   }
 
-  div.description {
+  .description {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 100px;
     gap: 100px;
-  }
-  p {
-    margin: 30px 0;
-  }
 
-  button {
-    padding: 20px;
-    background-color: $primaryColor;
-  }
-  button:hover {
-    box-shadow: 2px 4px 2px rgba(0,0,0,0.4);
-  }
-
-  article {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding: 20px;
-    gap: 20px;
-
-    img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
+    p {
+      margin: 30px 0; 
     }
-
-    p{
-      margin: 0;
-      margin-top: 10px;
+    button {
+      cursor: pointer;
+      padding: 20px;
+      background-color: $primaryColor;
     }
-    
+    button:hover {
+      box-shadow: 2px 4px 2px rgba(0,0,0,0.4);
+    }
+    article {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding: 20px;
+      gap: 20px;
+  
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      p{
+        margin: 0;
+        margin-top: 10px;
+      }
+      
+    }
   }
 }
 
@@ -371,14 +428,16 @@ nav {
     padding: 40px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 
-    div.details {
+    .details {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 0;
+      padding: 20px 0;
 
-      div.left {
+      .left {
         display: flex;
+        gap: 20px;
+        align-items: center;
       }
     }
 
@@ -407,8 +466,8 @@ nav {
   .top {
     text-align: center;
   }
-  h5, h2 {
-    padding: 10px;
+  h2 {
+    padding: 15px 0;
   }
 
   p.text {
@@ -454,11 +513,6 @@ nav {
 /***************** LAST SECTION ****************/
 #last {  
   background-color: #f3eeee;
-  // background-image: url("images/bg.png");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // width: 100%;
-  // height: 68vh;
 
   .left {
     margin: 0 auto;
@@ -473,6 +527,10 @@ nav {
     .btns {
       display: flex;
       gap: 50px;
+      img {
+        width: 300px;
+        height: 200px;
+      }
     }
   }
 }
@@ -490,10 +548,13 @@ nav {
     padding: 12px 0;
   }
 
-  p{
+  p {
     padding-bottom: 20px;
   }
-
+  a {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
   span {
     font-size: 1.1rem;
     display: block;
@@ -534,5 +595,265 @@ nav {
     margin-top: 10px;
     background-color: $primaryColor;
     box-shadow: 2px 2px 2px $primaryColor;
+  }
+}
+
+
+/********************* Responsive Design *********************/
+
+@media (max-width: 920px) {
+
+  h1 { 
+		font-size: 3rem;
+	}
+  h2 {
+		font-size: 2.5rem;
+	}
+		
+  nav {
+    li, .right {
+      display: none;
+    }
+    .bar {
+      display: block;
+    }
+  }
+
+  #home {
+    margin-top: 0px;
+    width: 70vw;
+    p {
+      color: #222;
+      padding: 20px 0;
+    }
+
+  }
+
+  #page1 {
+    form {
+      .input {
+        width: 48%;
+      }
+    }
+  }
+
+  #page3 {
+    p {
+      width: 70vw;
+    }
+    .container {
+	  width: auto;
+      display: flex;
+      flex-direction: column;
+    //   gap:40px;
+      
+	  ul {
+        width: 100%;
+      }
+	  .right {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		img {
+			width: 500px;
+		}
+	  }
+    //   .right {
+    //     img {
+	// 		// flex: 1;
+	// 		//   width: 100%;
+    //     }
+	// 	.table {
+	// 		overflow: hidden;
+	// 		// flex: 1;
+	// 	}
+    //   }
+    }
+  }
+
+  #page4 {
+    margin-top: 30px;
+    padding: 40px;
+  }
+
+  #page5 {
+    .description {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #testimonials {
+    p#desc {
+      width: 90vw;
+    }
+    .cards {
+      margin: 0;
+      padding: 20px;
+      grid-template-columns: 1fr;
+      .card {
+        width: 100%;
+      }
+    } 
+  }
+
+  #faq {
+    p.text {
+      width: 80vw;
+    }
+    .faqs {
+      width: 90%;
+    }
+  }
+
+  #last {
+    .left {
+      width: 80vw;
+    }
+  }
+
+  #footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+/****************** Small Screen Size ***************/
+@media screen and (max-width: 520px) {
+  main {
+   padding: 20px;
+   background-image: none;
+  }
+  h1 {
+	font-size: 2.5rem;
+  }
+  h2 {
+	font-size: 2rem;
+  }
+
+  #home {
+    text-align: center;
+    width: 100%;
+   
+    h4 {
+      font-size: 1.5rem;
+    }
+    .btns {
+      display: flex;
+      flex-direction: column;
+      button {
+        padding: 20px;
+      }
+    }
+  }
+
+  #page1 {
+    padding: 20px;
+    margin: 0 40px;
+    form {
+      .input {
+        width: 100%;
+      }
+    }
+  }
+
+  #page2 {
+    .items {
+      .item {
+        width: 80%;
+        min-width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  #page3 {
+    padding: 20px 40px;
+
+    p {
+      width: 95%;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .table {
+          width: 80%;
+        }
+      
+    }
+  }
+
+  #page4 {
+    padding: 20px;
+    h1 {
+      font-size: 2.5rem;
+    }
+    h5 {
+      font-size: 1.5rem; 
+      font-weight: 500;
+    }
+  }
+
+  #page5 {
+    text-align: center;
+    h2 {
+      font-size: 2.5rem;
+    }
+    .description {
+      padding: 40px;
+      gap: 60px;
+
+      .right-side{
+        article {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  #testimonials {
+    width: 100%;
+    padding: 20px;
+    .cards {
+      .card {
+        width: 100%;
+      }
+    }
+  }
+
+  #faq {
+    p.text {
+      width: 95vw;
+    }
+    .faqs {
+      width: 100vw;
+    }
+  }
+
+  #last {
+    .left {
+      width: 100%;
+      padding: 20px;
+      h2 {
+        font-size: 2.5rem;
+      }
+      .btns {
+        gap: 20px;
+        display: flex;
+        img {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  #footer {
+    text-align: center;
+    padding: 40px 20px;
+    gap: 20px;
+    grid-template-columns: 1fr;
   }
 }

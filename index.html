@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
   <title>Car Rental</title>
 </head>
 <body>
@@ -29,10 +30,20 @@
         <a href="#" id="sign-in">Sign In</a>
         <button href="#" id="register">Register</button>
       </div>
+      <a href="#"><i class="fa-solid fa-bars bar"></i></a>
     </nav>
 
+    <div id="navbar">
+      <i class="fa-solid fa-x close"></i>
+      <a href="#home">Home</a>
+      <a href="#home">about</a>
+      <a href="#page1">Vehicle Models</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#page3">Our Team</a>
+      <a href="#page2">Contact</a>
+    </div>
+
     <section id="home">
-      <!-- <div class="left-body"></div> -->
       <div>
         <h4>Plan your trip now</h4>
         <h1>Save <span id="span">big</span> With our car rental</h1>
@@ -97,17 +108,17 @@
     <h2>Quick and easy car rental</h2>
     <div class="items">
       <div class="item">
-        <img src="images/selectcar.jpg" alt="" width="150px" height="150px">
+        <img src="images/selectcar.jpg" alt="" >
         <h4>Select Car</h4>
         <p>We offers a big range of vehicles for all your driving needs. We have the perfect car to meet your needs</p>
       </div>
       <div class="item">
-        <img src="images/operator.jpg" alt="" width="150px" height="150px">
+        <img src="images/operator.jpg" alt="" >
         <h4>Contact Operator</h4>
         <p>Our knowledgeable and friendly operators are always ready to help with any questions or concerns</p>
       </div>
       <div class="item">
-        <img src="images/driving.jpg" alt="" width="150px" height="150px">
+        <img src="images/driving.jpg" alt="" >
         <h4>Let's Drive</h4>
         <p>Whether you're hitting the open road, we've got you covered with our wide range of cars</p>
       </div>
@@ -118,7 +129,7 @@
     <h4>Vehicle Models</h4>
     <h2>Our rental fleet</h2>
     <p>Choose from a variety of our amazing vehicles to rent for your next adventure or business trip</p>
-    <div>
+    <div class="container">
       <ul>
         <li class="selected">Audi A1 S-Line</li>
         <li>VW Golf 6</li>
@@ -127,46 +138,48 @@
         <li>mercedes benz</li>
         <li>VW passat CC</li>
       </ul>
-      <img src="images/car.jpg" alt="">
-      <div class="table">
-        <table>
-          <thead>
-            <tr>
-              <th colspan="2">$25 / rent per day</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Model</td>
-              <td>Camry</td>
-            </tr>
-            <tr>
-              <td>Mark</td>
-              <td>Toyota</td>
-            </tr>
-            <tr>
-              <td>Year</td>
-              <td>2006</td>
-            </tr>
-            <tr>
-              <td>Doors</td>
-              <td>4/5</td>
-            </tr>
-            <tr>
-              <td>Fuel</td>
-              <td>hybrid</td>
-            </tr>
-            <tr>
-              <td>AC</td>
-              <td>yes</td>
-            </tr>
-            <tr>
-              <td>Transmission</td>
-              <td>Automatic</td>
-            </tr>
-          </tbody>
-        </table>
-        <button>Reserve Now</button>
+      <div class="right">
+        <img src="images/car.jpg" alt="">
+        <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">$25 / rent per day</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Model</td>
+                <td>Camry</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Toyota</td>
+              </tr>
+              <tr>
+                <td>Year</td>
+                <td>2006</td>
+              </tr>
+              <tr>
+                <td>Doors</td>
+                <td>4/5</td>
+              </tr>
+              <tr>
+                <td>Fuel</td>
+                <td>hybrid</td>
+              </tr>
+              <tr>
+                <td>AC</td>
+                <td>yes</td>
+              </tr>
+              <tr>
+                <td>Transmission</td>
+                <td>Automatic</td>
+              </tr>
+            </tbody>
+          </table>
+          <button>Reserve Now</button>
+        </div>
       </div>
     </div>
   </section>
@@ -273,8 +286,8 @@
       <p>Thrown shy denote ten ladies though ask saw. Or by to he going think order event music. Incommode so intention defective at convinced. Led income months itself and houses you.</p>
 
       <div class="btns">
-        <img src="images/googleplay.png" alt="" width="300px" height="200px">
-        <img src="images/appstore.png" alt="" width="300px" height="200px">
+        <img src="images/googleplay.png" alt="" >
+        <img src="images/appstore.png" alt="" >
       </div>
     </div>
   </section>
@@ -283,8 +296,8 @@
     <div class="col">
       <h5>CAR Rental</h5>
       <p>We offers a big range of vehicles for all your driving needs. We have the perfect car to meet your needs.</p>
-      <span class="address"><i class="fa-solid fa-phone"></i> +25192345678</span>
-      <span class="address"><i class="fa-solid fa-envelope"></i> carrent@gmail.com</span>
+      <span class="address"><a href="#"><i class="fa-solid fa-phone"></i> +25192345678</a></span>
+      <span class="address"><a href="mailto:carrent@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i> carrent@gmail.com</a></span>
     </div>
     <div class="col">
       <h5>Company</h5>

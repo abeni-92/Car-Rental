@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5, h6, p {
 h1 {
   font-size: 4rem;
   font-weight: 900;
+  line-height: 4, 5rem;
 }
 
 h2 {
@@ -36,6 +37,7 @@ h3 {
 h4 {
   font-size: 2rem;
   font-weight: 800;
+  line-height: 2.5rem;
 }
 
 h5 {
@@ -75,6 +77,8 @@ button {
 
 body {
   margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 main {
@@ -87,36 +91,65 @@ main {
   background-size: 60%;
 }
 
+#navbar {
+  padding: 20px;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #fff;
+  height: 100vh;
+  width: 80%;
+  transition: transform 0.5s ease-in-out;
+}
+#navbar i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+#navbar i:hover {
+  color: #ff3906;
+}
+
+.show {
+  transform: translateX(0%);
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.left, .middle, .right {
+nav .bar {
+  display: none;
+  font-size: 1.5rem;
+}
+nav .left, nav .middle, nav .right {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-
-.left {
+nav .left {
   cursor: pointer;
 }
-
-#register {
+nav #register {
   background-color: rgb(20, 20, 197);
   box-shadow: 0 4px 2px rgba(0, 0, 0, 0.3);
   padding: 15px 30px;
 }
-
-#register:hover {
+nav #register:hover {
   box-shadow: 0 6px 4px rgb(111, 111, 224);
 }
 
-/***************** HOME SECTION ****************/
+/***************** SECTION HOME ****************/
 #home {
-  margin-top: 80px;
-  padding: 20px 20px 0 20px;
+  margin-top: 40px;
+  padding: 20px;
   width: 40vw;
 }
 #home div {
@@ -132,8 +165,11 @@ nav {
   display: flex;
   gap: 20px;
 }
+#home i {
+  padding: 0 10px;
+}
 #home button#book-ride {
-  border: 2px solid rgb(20, 20, 197);
+  border: 1px solid rgb(20, 20, 197);
   background-color: rgb(20, 20, 197);
   box-shadow: 0 4px 2px rgba(0, 0, 0, 0.5);
   padding: 20px 40px;
@@ -144,29 +180,33 @@ nav {
 #home button#learn-more {
   background-color: rgb(8, 8, 8);
   padding: 20px 40px;
-  border: 2px solid rgb(8, 8, 8);
+  border: 1px solid rgb(8, 8, 8);
 }
 #home button#learn-more:hover {
   background-color: white;
   color: rgb(8, 8, 8);
 }
 
-/***************** PAGE1 SECTION ****************/
+/***************** SECTION PAGE1 ****************/
 #page1 {
-  background-color: #f5f5f5;
+  background-color: #f1f2f3;
   margin: 0 60px;
-  padding: 60px 20px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 #page1 form {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-end;
   gap: 20px;
 }
 #page1 form .input {
   width: 32%;
+}
+#page1 form .input h5 {
+  padding: 10px 0;
 }
 #page1 form .input i {
   color: rgb(102, 95, 95);
@@ -188,91 +228,106 @@ nav {
   box-shadow: 0 6px 4px rgb(111, 111, 224);
 }
 
-/***************** PAGE2 SECTION ****************/
+/***************** SECTION PAGE2 ****************/
 #page2 {
   padding: 120px 20px 0 20px;
   text-align: center;
 }
 #page2 .items {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 50px;
-  padding: 120px 100px;
+  padding: 60px;
 }
-#page2 img {
+#page2 .items .item {
+  min-width: 250px;
+  max-width: 400px;
+  flex: 1;
+}
+#page2 .items .item img {
+  width: 200px;
+  height: 200px;
   border-radius: 100%;
   margin-bottom: 20px;
 }
 
-/***************** PAGE3 SECTION ****************/
+/***************** SECTION PAGE3 ****************/
 #page3 {
-  padding: 80px 60px;
+  padding: 80px;
   text-align: center;
 }
 #page3 p {
   margin: 20px auto 0;
   width: 40vw;
 }
-#page3 div {
+#page3 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 50px;
 }
-#page3 ul {
+#page3 .container ul {
   display: flex;
   flex-direction: column;
+  width: auto;
   gap: 15px;
 }
-#page3 li {
+#page3 .container ul li {
+  width: 100%;
   background-color: #eee;
   padding: 15px 30px;
   font-size: 1.2rem;
   font-weight: 700;
   transition: background-color 0.3s ease-in-out;
 }
-#page3 img {
-  width: 500px;
-  height: 500px;
-  object-fit: contain;
-}
-#page3 li:hover, #page3 .selected {
+#page3 .container ul li:hover, #page3 .container ul .selected {
   background-color: rgb(20, 20, 197);
   color: white;
 }
-#page3 .table {
+#page3 .container .right {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+#page3 .container .right img {
+  width: 600px;
+  object-fit: contain;
+}
+#page3 .container .right .table {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-#page3 table {
+#page3 .container .right .table table {
   border-collapse: collapse;
   width: 100%;
 }
-#page3 td, #page3 th {
+#page3 .container .right .table td, #page3 .container .right .table th {
   border: 1px solid #ddd;
   padding: 10px 30px;
 }
-#page3 th {
+#page3 .container .right .table th {
   background-color: rgb(20, 20, 197);
   color: white;
 }
-#page3 button {
+#page3 .container .right button {
   width: 100%;
   padding: 15px;
   background-color: rgb(20, 20, 197);
   border-radius: 0;
 }
-#page3 button:hover {
+#page3 .container .right button:hover {
   box-shadow: 0 4px 2px rgba(0, 0, 0, 0.4);
 }
 
-/***************** PAGE4 SECTION ****************/
+/***************** SECTION PAGE4 ****************/
 #page4 {
   text-align: center;
   padding: 60px;
   background-color: #222;
   color: white;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 #page4 h1 {
   padding: 20px;
@@ -281,40 +336,42 @@ nav {
   color: rgb(20, 20, 197);
 }
 
+/**************** Section page5 *****************/
 #page5 img#car {
   width: 100%;
   height: 80vh;
   object-fit: cover;
 }
-#page5 div.description {
+#page5 .description {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 100px;
   gap: 100px;
 }
-#page5 p {
+#page5 .description p {
   margin: 30px 0;
 }
-#page5 button {
+#page5 .description button {
+  cursor: pointer;
   padding: 20px;
   background-color: rgb(20, 20, 197);
 }
-#page5 button:hover {
+#page5 .description button:hover {
   box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.4);
 }
-#page5 article {
+#page5 .description article {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   padding: 20px;
   gap: 20px;
 }
-#page5 article img {
+#page5 .description article img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
-#page5 article p {
+#page5 .description article p {
   margin: 0;
   margin-top: 10px;
 }
@@ -347,14 +404,16 @@ nav {
   padding: 40px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
-#testimonials .card div.details {
+#testimonials .card .details {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 0;
+  padding: 20px 0;
 }
-#testimonials .card div.details div.left {
+#testimonials .card .details .left {
   display: flex;
+  gap: 20px;
+  align-items: center;
 }
 #testimonials .card img {
   width: 90px;
@@ -378,8 +437,8 @@ nav {
 #faq .top {
   text-align: center;
 }
-#faq h5, #faq h2 {
-  padding: 10px;
+#faq h2 {
+  padding: 15px 0;
 }
 #faq p.text {
   width: 65vw;
@@ -432,6 +491,10 @@ nav {
   display: flex;
   gap: 50px;
 }
+#last .left .btns img {
+  width: 300px;
+  height: 200px;
+}
 
 /***************** footer SECTION ****************/
 #footer {
@@ -446,6 +509,10 @@ nav {
 }
 #footer p {
   padding-bottom: 20px;
+}
+#footer a {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 #footer span {
   font-size: 1.1rem;
@@ -482,6 +549,194 @@ nav {
   margin-top: 10px;
   background-color: rgb(20, 20, 197);
   box-shadow: 2px 2px 2px rgb(20, 20, 197);
+}
+
+/********************* Responsive Design *********************/
+@media (max-width: 920px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  nav li, nav .right {
+    display: none;
+  }
+  nav .bar {
+    display: block;
+  }
+  #home {
+    margin-top: 0px;
+    width: 70vw;
+  }
+  #home p {
+    color: #222;
+    padding: 20px 0;
+  }
+  #page1 form .input {
+    width: 48%;
+  }
+  #page3 p {
+    width: 70vw;
+  }
+  #page3 .container {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #page3 .container ul {
+    width: 100%;
+  }
+  #page3 .container .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #page3 .container .right img {
+    width: 500px;
+  }
+  #page4 {
+    margin-top: 30px;
+    padding: 40px;
+  }
+  #page5 .description {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  #testimonials p#desc {
+    width: 90vw;
+  }
+  #testimonials .cards {
+    margin: 0;
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+  #testimonials .cards .card {
+    width: 100%;
+  }
+  #faq p.text {
+    width: 80vw;
+  }
+  #faq .faqs {
+    width: 90%;
+  }
+  #last .left {
+    width: 80vw;
+  }
+  #footer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+/****************** Small Screen Size ***************/
+@media screen and (max-width: 520px) {
+  main {
+    padding: 20px;
+    background-image: none;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  #home {
+    text-align: center;
+    width: 100%;
+  }
+  #home h4 {
+    font-size: 1.5rem;
+  }
+  #home .btns {
+    display: flex;
+    flex-direction: column;
+  }
+  #home .btns button {
+    padding: 20px;
+  }
+  #page1 {
+    padding: 20px;
+    margin: 0 40px;
+  }
+  #page1 form .input {
+    width: 100%;
+  }
+  #page2 .items .item {
+    width: 80%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  #page3 {
+    padding: 20px 40px;
+  }
+  #page3 p {
+    width: 95%;
+  }
+  #page3 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #page3 .container .table {
+    width: 80%;
+  }
+  #page4 {
+    padding: 20px;
+  }
+  #page4 h1 {
+    font-size: 2.5rem;
+  }
+  #page4 h5 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  #page5 {
+    text-align: center;
+  }
+  #page5 h2 {
+    font-size: 2.5rem;
+  }
+  #page5 .description {
+    padding: 40px;
+    gap: 60px;
+  }
+  #page5 .description .right-side article {
+    display: flex;
+    flex-direction: column;
+  }
+  #testimonials {
+    width: 100%;
+    padding: 20px;
+  }
+  #testimonials .cards .card {
+    width: 100%;
+  }
+  #faq p.text {
+    width: 95vw;
+  }
+  #faq .faqs {
+    width: 100vw;
+  }
+  #last .left {
+    width: 100%;
+    padding: 20px;
+  }
+  #last .left h2 {
+    font-size: 2.5rem;
+  }
+  #last .left .btns {
+    gap: 20px;
+    display: flex;
+  }
+  #last .left .btns img {
+    flex: 1;
+  }
+  #footer {
+    text-align: center;
+    padding: 40px 20px;
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
