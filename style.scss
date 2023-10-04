@@ -108,6 +108,7 @@ main {
   height: 100vh;
   width: 80%;
   transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
   z-index: 10;
 
   i {
@@ -601,6 +602,234 @@ nav {
   }
 }
 
+/*********************** About Page **************************/
+/*************** Header Section *****************/ 
+#header {
+	// position: relative;
+	background-image: url("images/hero.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 40px 120px;
+	// opacity: .3;
+	// backdrop-filter: blur(10%);
+	// filter: brightness(80%);
+	
+	filter: saturate(50%);
+	height: 60vh;
+	// z-index: -10;
+	color: #ff3906;
+	  
+	a {
+		color: #ff3906;
+	}
+	.content {
+		// filter: contrast(100%);
+		margin-top: 10vh;
+		// z-index: 10;
+
+	}
+}
+
+/*************** About Section *******************/
+#about {
+	margin-top: 60px;
+	padding: 40px 80px;
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	img {
+		width: 450px;
+		height: 500px;
+	}
+
+	.container {
+		gap: 20px;
+		width: 500px;
+		display: flex;
+		flex-direction: column;
+
+		.row {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 40px;
+			.item {
+				img {
+					width: 70px;
+					height: 70px;
+				}
+				div {
+					display: flex;
+					align-items: center;
+					gap: 15px;
+				}
+			}
+		}
+	}
+}
+
+/********************* section bookcall *******************/
+#bookcall {
+	text-align: center;
+	h4 {
+		padding: 80px;
+		background-color: #222;
+		color: #fff;
+
+		span {
+			margin-left: 60px;
+			color: rgb(42, 42, 199);
+		}
+	}
+}
+
+/********************** Vehicle page ***********************/
+#vehicle {
+	padding: 120px;
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 400px);
+		grid-template-rows: auto;
+		justify-content: center;
+		gap: 40px;
+		.item {
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 50%;
+				transition: transform 0.3s ease-in-out;
+			}
+			img:hover {
+				transform: scale(1.2);
+			}
+			.bottom {	
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				padding: 20px;
+				.row {
+					display: flex;
+					justify-content: space-between;
+					.right, .left {
+						i {
+							padding: 0 10px;
+						}
+						.rating {
+							i {
+								padding: 10px 0;
+							}
+						}
+					}
+				}
+			}
+			.bottom::after {
+				content: "dd";
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				color: #ccc;
+				width: 100%; /* Match the width of the container */
+				height: 2px; /* Set your desired border thickness */
+				// background-color: #000; 
+			}
+			
+			button {
+				background-color: rgb(67, 67, 233);
+				width: 90%;
+				padding: 20px;	
+				margin: 20px auto;
+				cursor: pointer;
+			}
+			button:hover {
+				background-color: rgb(53, 53, 211);;
+			}
+		}
+	}
+}
+
+/*********************** Our Team Page ***********************/
+/******************* Section ourteam ************************/
+#ourteam {
+	padding: 120px;
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 400px);
+		justify-content: center;
+		gap: 40px;
+		.item{
+			box-shadow: 2px 4px 6px #ccc;
+			img {
+				width: 100%;
+				height: 450px;
+				object-fit: cover;
+			}
+			.bottom {
+				padding: 40px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	}
+}
+
+/********************** Contact page ************************/
+#contact {
+	padding: 120px;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		.left {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+			width: 35vw;
+			div {
+				display: flex;
+				flex-direction: column;
+				a {
+					color: #999;
+					font-weight: 500;
+					i {
+						padding: 10px;
+					}
+				}
+				a:hover {
+					color: #ff3906;
+				}
+			}
+		}
+		.right {
+			width: 40vw;
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				input, textarea {
+					padding: 20px;
+					background-color: #eee;
+					outline: none;
+					border: none;
+				}
+				label {
+					font-size: 1rem;
+					font-weight: 600;
+					// padding: 10px 0;
+				}
+				input::placeholder, textarea::placeholder {
+					font-size: 1.1rem;
+				}
+				button {
+					padding: 20px;
+					background-color: #ff3906;
+				}
+			}
+		}
+	}
+}
 
 /********************* Responsive Design *********************/
 
@@ -656,26 +885,11 @@ nav {
         width: 100%;
       }
 	  .right {
-		// display: flex;
-		// // flex-direction: column;
-		// align-items: center;
 		gap: 20px;
 		img {
-			// flex: 1;
 			width: 400px;
-			// width: 70%;
 		}
 	  }
-    //   .right {
-    //     img {
-	// 		// flex: 1;
-	// 		//   width: 100%;
-    //     }
-	// 	.table {
-	// 		overflow: hidden;
-	// 		// flex: 1;
-	// 	}
-    //   }
     }
   }
 

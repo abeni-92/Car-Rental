@@ -105,6 +105,7 @@ main {
   height: 100vh;
   width: 80%;
   transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
   z-index: 10;
 }
 #navbar i {
@@ -552,6 +553,213 @@ nav #register:hover {
   margin-top: 10px;
   background-color: rgb(20, 20, 197);
   box-shadow: 2px 2px 2px rgb(20, 20, 197);
+}
+
+/*********************** About Page **************************/
+/*************** Header Section *****************/
+#header {
+  background-image: url("images/hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px 120px;
+  filter: saturate(50%);
+  height: 60vh;
+  color: #ff3906;
+}
+#header a {
+  color: #ff3906;
+}
+#header .content {
+  margin-top: 10vh;
+}
+
+/*************** About Section *******************/
+#about {
+  margin-top: 60px;
+  padding: 40px 80px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+#about img {
+  width: 450px;
+  height: 500px;
+}
+#about .container {
+  gap: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+#about .container .row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+#about .container .row .item img {
+  width: 70px;
+  height: 70px;
+}
+#about .container .row .item div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/********************* section bookcall *******************/
+#bookcall {
+  text-align: center;
+}
+#bookcall h4 {
+  padding: 80px;
+  background-color: #222;
+  color: #fff;
+}
+#bookcall h4 span {
+  margin-left: 60px;
+  color: rgb(42, 42, 199);
+}
+
+/********************** Vehicle page ***********************/
+#vehicle {
+  padding: 120px;
+}
+#vehicle .container {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: auto;
+  justify-content: center;
+  gap: 40px;
+}
+#vehicle .container .item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#vehicle .container .item img {
+  width: 100%;
+  height: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+#vehicle .container .item img:hover {
+  transform: scale(1.2);
+}
+#vehicle .container .item .bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+#vehicle .container .item .bottom .row {
+  display: flex;
+  justify-content: space-between;
+}
+#vehicle .container .item .bottom .row .right i, #vehicle .container .item .bottom .row .left i {
+  padding: 0 10px;
+}
+#vehicle .container .item .bottom .row .right .rating i, #vehicle .container .item .bottom .row .left .rating i {
+  padding: 10px 0;
+}
+#vehicle .container .item .bottom::after {
+  content: "dd";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  color: #ccc;
+  width: 100%; /* Match the width of the container */
+  height: 2px; /* Set your desired border thickness */
+}
+#vehicle .container .item button {
+  background-color: rgb(67, 67, 233);
+  width: 90%;
+  padding: 20px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+#vehicle .container .item button:hover {
+  background-color: rgb(53, 53, 211);
+}
+
+/*********************** Our Team Page ***********************/
+/******************* Section ourteam ************************/
+#ourteam {
+  padding: 120px;
+}
+#ourteam .container {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  justify-content: center;
+  gap: 40px;
+}
+#ourteam .container .item {
+  box-shadow: 2px 4px 6px #ccc;
+}
+#ourteam .container .item img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+#ourteam .container .item .bottom {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/********************** Contact page ************************/
+#contact {
+  padding: 120px;
+}
+#contact .container {
+  display: flex;
+  justify-content: space-between;
+}
+#contact .container .left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 35vw;
+}
+#contact .container .left div {
+  display: flex;
+  flex-direction: column;
+}
+#contact .container .left div a {
+  color: #999;
+  font-weight: 500;
+}
+#contact .container .left div a i {
+  padding: 10px;
+}
+#contact .container .left div a:hover {
+  color: #ff3906;
+}
+#contact .container .right {
+  width: 40vw;
+}
+#contact .container .right form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#contact .container .right form input, #contact .container .right form textarea {
+  padding: 20px;
+  background-color: #eee;
+  outline: none;
+  border: none;
+}
+#contact .container .right form label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+#contact .container .right form input::placeholder, #contact .container .right form textarea::placeholder {
+  font-size: 1.1rem;
+}
+#contact .container .right form button {
+  padding: 20px;
+  background-color: #ff3906;
 }
 
 /********************* Responsive Design *********************/
