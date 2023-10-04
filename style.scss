@@ -97,11 +97,10 @@ main {
 #navbar {
   padding: 20px;
   position: fixed;
-  display: flex;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -109,6 +108,7 @@ main {
   height: 100vh;
   width: 80%;
   transition: transform 0.5s ease-in-out;
+  z-index: 10;
 
   i {
     position: absolute;
@@ -155,7 +155,7 @@ nav {
 /***************** SECTION HOME ****************/
 #home {
   margin-top: 40px;
-  padding: 20px;
+  padding: 20px 0;
   width: 40vw;
   div {
     margin-bottom: 50px;
@@ -255,7 +255,7 @@ nav {
       img {
         width: 200px;
         height: 200px;
-        border-radius: 100%;
+        border-radius: 50%;
         margin-bottom: 20px;
       }
     }
@@ -278,7 +278,8 @@ nav {
     align-items: center;
     margin-top: 50px;
     ul {
-      display: flex;
+	  flex: 1;
+	  display: flex;
       flex-direction: column;
       width: auto;
       gap: 15px;
@@ -302,10 +303,12 @@ nav {
 	  gap: 40px;
 
       img {
+		flex: 1;
         width: 600px;
         object-fit: contain;
       }
       .table {
+		flex: 1;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -630,6 +633,7 @@ nav {
   }
 
   #page1 {
+	margin: 0 20px;
     form {
       .input {
         width: 48%;
@@ -638,24 +642,28 @@ nav {
   }
 
   #page3 {
+	padding: 40px;
     p {
       width: 70vw;
     }
     .container {
-	  width: auto;
+	  width: 100%;
       display: flex;
       flex-direction: column;
-    //   gap:40px;
-      
+      gap: 40px; 
+
 	  ul {
         width: 100%;
       }
 	  .right {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		// display: flex;
+		// // flex-direction: column;
+		// align-items: center;
+		gap: 20px;
 		img {
-			width: 500px;
+			// flex: 1;
+			width: 400px;
+			// width: 70%;
 		}
 	  }
     //   .right {
@@ -684,6 +692,7 @@ nav {
   }
 
   #testimonials {
+	padding: 40px;
     p#desc {
       width: 90vw;
     }
@@ -698,6 +707,9 @@ nav {
   }
 
   #faq {
+	background-size: 40% 40%;
+	background-position: -10% 60%;
+	width: 100%;
     p.text {
       width: 80vw;
     }
@@ -758,17 +770,18 @@ nav {
   }
 
   #page2 {
+	padding: 40px 20px;
     .items {
       .item {
-        width: 80%;
-        min-width: 100%;
-        max-width: 100%;
+        width: 100%;
+        // min-width: 100%;
+        // max-width: 100%;
       }
     }
   }
 
   #page3 {
-    padding: 20px 40px;
+    padding: 20px;
 
     p {
       width: 95%;
@@ -777,11 +790,13 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-    
-        .table {
-          width: 80%;
-        }
-      
+		justify-content: center;
+
+		.right {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
     }
   }
 
@@ -825,11 +840,14 @@ nav {
   }
 
   #faq {
+	background: none;
+	width: 100%;
+	padding: 20px;
     p.text {
-      width: 95vw;
+      width: 90vw;
     }
     .faqs {
-      width: 100vw;
+      width: 100%;
     }
   }
 

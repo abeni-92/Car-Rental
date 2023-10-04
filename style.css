@@ -94,11 +94,10 @@ main {
 #navbar {
   padding: 20px;
   position: fixed;
-  display: flex;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -106,6 +105,7 @@ main {
   height: 100vh;
   width: 80%;
   transition: transform 0.5s ease-in-out;
+  z-index: 10;
 }
 #navbar i {
   position: absolute;
@@ -149,7 +149,7 @@ nav #register:hover {
 /***************** SECTION HOME ****************/
 #home {
   margin-top: 40px;
-  padding: 20px;
+  padding: 20px 0;
   width: 40vw;
 }
 #home div {
@@ -248,7 +248,7 @@ nav #register:hover {
 #page2 .items .item img {
   width: 200px;
   height: 200px;
-  border-radius: 100%;
+  border-radius: 50%;
   margin-bottom: 20px;
 }
 
@@ -268,6 +268,7 @@ nav #register:hover {
   margin-top: 50px;
 }
 #page3 .container ul {
+  flex: 1;
   display: flex;
   flex-direction: column;
   width: auto;
@@ -291,10 +292,12 @@ nav #register:hover {
   gap: 40px;
 }
 #page3 .container .right img {
+  flex: 1;
   width: 600px;
   object-fit: contain;
 }
 #page3 .container .right .table {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -573,27 +576,32 @@ nav #register:hover {
     color: #222;
     padding: 20px 0;
   }
+  #page1 {
+    margin: 0 20px;
+  }
   #page1 form .input {
     width: 48%;
+  }
+  #page3 {
+    padding: 40px;
   }
   #page3 p {
     width: 70vw;
   }
   #page3 .container {
-    width: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 40px;
   }
   #page3 .container ul {
     width: 100%;
   }
   #page3 .container .right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 20px;
   }
   #page3 .container .right img {
-    width: 500px;
+    width: 400px;
   }
   #page4 {
     margin-top: 30px;
@@ -602,6 +610,9 @@ nav #register:hover {
   #page5 .description {
     display: grid;
     grid-template-columns: 1fr;
+  }
+  #testimonials {
+    padding: 40px;
   }
   #testimonials p#desc {
     width: 90vw;
@@ -612,6 +623,11 @@ nav #register:hover {
     grid-template-columns: 1fr;
   }
   #testimonials .cards .card {
+    width: 100%;
+  }
+  #faq {
+    background-size: 40% 40%;
+    background-position: -10% 60%;
     width: 100%;
   }
   #faq p.text {
@@ -661,13 +677,14 @@ nav #register:hover {
   #page1 form .input {
     width: 100%;
   }
+  #page2 {
+    padding: 40px 20px;
+  }
   #page2 .items .item {
-    width: 80%;
-    min-width: 100%;
-    max-width: 100%;
+    width: 100%;
   }
   #page3 {
-    padding: 20px 40px;
+    padding: 20px;
   }
   #page3 p {
     width: 95%;
@@ -676,9 +693,12 @@ nav #register:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
-  #page3 .container .table {
-    width: 80%;
+  #page3 .container .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   #page4 {
     padding: 20px;
@@ -711,11 +731,16 @@ nav #register:hover {
   #testimonials .cards .card {
     width: 100%;
   }
+  #faq {
+    background: none;
+    width: 100%;
+    padding: 20px;
+  }
   #faq p.text {
-    width: 95vw;
+    width: 90vw;
   }
   #faq .faqs {
-    width: 100vw;
+    width: 100%;
   }
   #last .left {
     width: 100%;
