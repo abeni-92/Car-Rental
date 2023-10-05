@@ -73,6 +73,7 @@ button {
   border: none;
   font-size: 1.2rem;
   font-weight: 800;
+  cursor: pointer;
 }
 
 body {
@@ -104,8 +105,8 @@ main {
   background-color: #fff;
   height: 100vh;
   width: 80%;
-  transition: transform 0.5s ease-in-out;
   transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
   z-index: 10;
 }
 #navbar i {
@@ -115,10 +116,6 @@ main {
 }
 #navbar i:hover {
   color: #ff3906;
-}
-
-.show {
-  transform: translateX(0%);
 }
 
 nav {
@@ -583,7 +580,7 @@ nav #register:hover {
 }
 #about img {
   width: 450px;
-  height: 500px;
+  height: 450px;
 }
 #about .container {
   gap: 20px;
@@ -594,6 +591,7 @@ nav #register:hover {
 #about .container .row {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
   margin-top: 40px;
 }
 #about .container .row .item img {
@@ -603,7 +601,7 @@ nav #register:hover {
 #about .container .row .item div {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 /********************* section bookcall *******************/
@@ -662,15 +660,6 @@ nav #register:hover {
 #vehicle .container .item .bottom .row .right .rating i, #vehicle .container .item .bottom .row .left .rating i {
   padding: 10px 0;
 }
-#vehicle .container .item .bottom::after {
-  content: "dd";
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  color: #ccc;
-  width: 100%; /* Match the width of the container */
-  height: 2px; /* Set your desired border thickness */
-}
 #vehicle .container .item button {
   background-color: rgb(67, 67, 233);
   width: 90%;
@@ -680,6 +669,7 @@ nav #register:hover {
 }
 #vehicle .container .item button:hover {
   background-color: rgb(53, 53, 211);
+  box-shadow: 2px 2px 2px rgb(67, 67, 233);
 }
 
 /*********************** Our Team Page ***********************/
@@ -763,6 +753,7 @@ nav #register:hover {
 }
 
 /********************* Responsive Design *********************/
+/********************* Medium Size ***************************/
 @media (max-width: 920px) {
   h1 {
     font-size: 3rem;
@@ -777,7 +768,6 @@ nav #register:hover {
     display: block;
   }
   #home {
-    margin-top: 0px;
     width: 70vw;
   }
   #home p {
@@ -820,7 +810,7 @@ nav #register:hover {
     grid-template-columns: 1fr;
   }
   #testimonials {
-    padding: 40px;
+    padding: 80px 20px;
   }
   #testimonials p#desc {
     width: 90vw;
@@ -831,7 +821,8 @@ nav #register:hover {
     grid-template-columns: 1fr;
   }
   #testimonials .cards .card {
-    width: 100%;
+    width: 70%;
+    justify-self: center;
   }
   #faq {
     background-size: 40% 40%;
@@ -851,9 +842,64 @@ nav #register:hover {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
+  /*********** header section **********/
+  #header {
+    padding: 40px;
+  }
+  /********* About Page ***************/
+  #about {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #about .item div {
+    gap: 0;
+  }
+  /************** Section bookcall *******************/
+  #bookcall h4 {
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+  }
+  #bookcall h4 span {
+    margin-left: 0;
+    width: 70vw;
+  }
+  /***************** vehicle page *******************/
+  #vehicle {
+    padding: 100px 40px;
+  }
+  #vehicle .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /**************** ourteam page *********************/
+  #ourteam {
+    padding: 100px 40px;
+  }
+  #ourteam .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /**************** contact page *********************/
+  #contact {
+    padding: 100px 40px;
+  }
+  #contact .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  #contact .container .left {
+    text-align: center;
+    width: 70%;
+  }
+  #contact .container .right {
+    width: 70%;
+  }
 }
 /****************** Small Screen Size ***************/
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 600px) {
   main {
     padding: 20px;
     background-image: none;
@@ -934,7 +980,6 @@ nav #register:hover {
   }
   #testimonials {
     width: 100%;
-    padding: 20px;
   }
   #testimonials .cards .card {
     width: 100%;
@@ -969,6 +1014,36 @@ nav #register:hover {
     padding: 40px 20px;
     gap: 20px;
     grid-template-columns: 1fr;
+  }
+  #about .container {
+    width: 100%;
+  }
+  /****************** about page *****************/
+  #bookcall h4 {
+    flex-direction: column;
+    padding: 60px 40px;
+    gap: 20px;
+  }
+  /***************** Vehicle page *****************/
+  #vehicle {
+    padding: 80px;
+  }
+  #vehicle .container {
+    grid-template-columns: 1fr;
+  }
+  /**************** outteam page ******************/
+  #ourteam {
+    padding: 80px;
+  }
+  #ourteam .container {
+    grid-template-columns: 1fr;
+  }
+  /************** contact page ******************/
+  #contact {
+    padding: 80px;
+  }
+  #contact .container .left, #contact .container .right {
+    width: 100%;
   }
 }
 
