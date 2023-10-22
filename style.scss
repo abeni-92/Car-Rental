@@ -103,7 +103,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: start;
+  gap: 25px;
   background-color: #fff;
   height: 100vh;
   width: 80%;
@@ -111,14 +112,18 @@ main {
   transition: transform 0.5s ease-in-out;
   z-index: 10;
 
+  a {
+    color: #222345;
+  }
   i {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    align-self: flex-end;
+    color: #ff3906;
+    cursor: pointer;
   }
   i:hover {
     color: #ff3906;
   }
+  
 }
 
 nav {
@@ -274,9 +279,10 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
+    
     ul {
-	  flex: 1;
-	  display: flex;
+	    flex: 1;
+	    display: flex;
       flex-direction: column;
       width: auto;
       gap: 15px;
@@ -296,32 +302,32 @@ nav {
     
     .right {
       display: flex;  
-	  justify-content: space-between;
-	  gap: 40px;
+      justify-content: space-between;
+      gap: 40px;
 
       img {
-		flex: 1;
+	    	flex: 1;
         width: 600px;
         object-fit: contain;
       }
       .table {
-		flex: 1;
+		    flex: 1;
         display: flex;
         flex-direction: column;
         gap: 20px;
 		
-		table {
-		  border-collapse: collapse;
-		  width: 100%;
-		}
-		td, th {
-		  border: 1px solid #ddd;
-		  padding: 10px 30px;
-		}
-		th{
-		  background-color: $primaryColor;
-		  color: $thirdColor;
-		}
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        td, th {
+          border: 1px solid #ddd;
+          padding: 10px 30px;
+        }
+        th{
+          background-color: $primaryColor;
+          color: $thirdColor;
+        }
       }
       button {
         width: 100%;
@@ -526,6 +532,7 @@ nav {
    
     .btns {
       display: flex;
+      // flex-wrap: wrap;
       gap: 50px;
       img {
         width: 300px;
@@ -644,6 +651,7 @@ nav {
 		.row {
 			display: flex;
 			justify-content: space-between;
+      flex-wrap: wrap;
 			gap: 40px;
 			margin-top: 40px;
 			.item {
@@ -854,25 +862,25 @@ nav {
   }
 
   #page3 {
-	padding: 40px;
+	  padding: 40px;
     p {
       width: 70vw;
     }
     .container {
-	  width: 100%;
+	    width: 100%;
       display: flex;
       flex-direction: column;
       gap: 40px; 
 
-	  ul {
-        width: 100%;
+      ul {
+          width: 100%;
+        }
+      .right {
+        gap: 20px;
+        img {
+          width: 400px;
+        }
       }
-	  .right {
-		gap: 20px;
-		img {
-			width: 400px;
-		}
-	  }
     }
   }
 
@@ -899,7 +907,7 @@ nav {
       grid-template-columns: 1fr;
       .card {
         width: 70%;
-		justify-self: center;
+		    justify-self: center;
       }
     } 
   }
@@ -1024,7 +1032,6 @@ nav {
 
   #page1 {
     padding: 20px;
-    margin: 0 40px;
     form {
       .input {
         width: 100%;
@@ -1033,12 +1040,14 @@ nav {
   }
 
   #page2 {
-	padding: 40px 20px;
+	  padding: 60px 20px;
     .items {
       .item {
         width: 100%;
-        // min-width: 100%;
-        // max-width: 100%;
+        img {
+          width: 250px;
+          height: 250px;
+        }
       }
     }
   }
@@ -1053,23 +1062,32 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-		justify-content: center;
+    		justify-content: center;
 
-		.right {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-		}
+        .right {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 100%;
+          }
+          .table {
+            table {
+              width: 90vw;
+            }
+          }
+        }
     }
   }
 
   #page4 {
     padding: 20px;
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
     h5 {
-      font-size: 1.5rem; 
+      font-size: 1.2rem; 
       font-weight: 500;
     }
   }
@@ -1077,7 +1095,10 @@ nav {
   #page5 {
     text-align: center;
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
+    }
+    h5 {
+      font-size: 1.2rem;
     }
     .description {
       padding: 40px;
@@ -1095,6 +1116,7 @@ nav {
   #testimonials {
     width: 100%;
     .cards {
+      padding: 0;
       .card {
         width: 100%;
       }
@@ -1124,7 +1146,8 @@ nav {
         gap: 20px;
         display: flex;
         img {
-          flex: 1;
+          width: 50vw;
+          height: 150px;
         }
       }
     }
@@ -1138,43 +1161,57 @@ nav {
   }
 
   #about {
-	.container {
-		width: 100%;
-	}
+    padding: 20px;
+    img {
+      width: 100%;
+    }
+    .container {
+      width: 100%;
+      h3 {
+        font-size: 2rem;
+      }
+      .row {
+        justify-content: center;
+      }
+    }
   }
 
-  /****************** about page *****************/
+  /****************** bookcall page *****************/
   #bookcall {
-	h4 {
-		flex-direction: column;
-		padding: 60px 40px;
-		gap: 20px;
-	}
+    h4 {
+      flex-direction: column;
+      padding: 10px;
+      gap: 20px;
+      font-size: 2rem;
+      span {
+        margin-left: 0;
+      }
+    }
   }
 
   /***************** Vehicle page *****************/
   #vehicle {
-	padding: 80px;
-	.container {
-		grid-template-columns: 1fr;
-	}
+    padding: 80px 20px;
+    .container {
+      grid-template-columns: 1fr;
+    }
   }
   
   /**************** outteam page ******************/
   #ourteam {
-	padding: 80px;
-	.container {
-		grid-template-columns: 1fr;
-	}
+    padding: 80px 20px;
+    .container {
+      grid-template-columns: 1fr;
+    }
   }
 
   /************** contact page ******************/
   #contact {
-	padding: 80px;
-	.container {
-		.left, .right {
-			width: 100%;
-		}
-	}
+    padding: 80px 20px;
+    .container {
+      .left, .right {
+        width: 100%;
+      }
+    }
   }
 }
